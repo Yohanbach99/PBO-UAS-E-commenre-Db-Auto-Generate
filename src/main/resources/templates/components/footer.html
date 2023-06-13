@@ -1,0 +1,46 @@
+<a th:fragment="navba">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .col-6 {
+          background-color: #000066;
+          color: #fff;
+          padding: 10px;
+        }
+      
+        .col-6 input[type="text"],
+        .col-6 textarea {
+          background-color: #fff;
+          color: #000066;
+          padding: 5px;
+          border: none;
+          border-radius: 5px;
+        }
+      </style>
+</head>
+<body>
+     <footer class="mt-auto">
+    <div id="footer-content" class="text-center">
+      <!-- Isi tanggal dan jam akan ditampilkan di sini -->
+    </div>
+  </footer>
+  <script> // Mendapatkan elemen footer
+    const footerContent = document.getElementById('footer-content');
+  
+    // Fungsi untuk mengupdate isi tanggal dan jam
+    function updateDateTime() {
+      const currentDate = new Date();
+      const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+      const dateTimeString = currentDate.toLocaleString('en-US', options);
+  
+      footerContent.textContent = dateTimeString;
+    }
+  
+    // Memanggil fungsi updateDateTime() setiap detik
+    setInterval(updateDateTime, 1000);</script>
+</body>
+</html>
